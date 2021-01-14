@@ -15,4 +15,20 @@ module.exports = (client, Tags, Embed) => {
         }
     })
 
+    // Player Leave
+    client.on('guildMemberRemove', member => {
+
+        const tag = await Tags.findOne({ where: { guild_id: member.guild.id } });
+        const data = tag.get("leave_message");
+
+        if(data.enabled){
+            const textChannel = member.guild.channels.cache.get(data.channel_id);
+            if(!textChannel) return
+
+            const text = data.message.replace('%kullanıcı%', member.displayName).replace("%toplam_üye%", member.guild.memberCount);
+            textChannel.send(Embed("", text));
+        }
+
+    })
+
 }
