@@ -7,6 +7,7 @@ const { token, prefix, developer_id } = require('./config.json');
 // Utils
 const Embed = require('./utils/embed.js');
 const playerJoinLeave = require('./utils/player-join-leave');
+const botJoinLeave = require('./utils/bot-join-leave');
 const database = require('./utils/database.js');
 const tagSystem = require('./utils/tagExecute');
 const emojis = require('./utils/emojis');
@@ -41,6 +42,7 @@ client.once('ready', async () => {
     playerJoinLeave(client, Tags, Embed);
     tagSystem(client, Tags);
     linkProtect(client, Tags, Embed);
+    botJoinLeave(client, Tags);
 
     // Database check
     // Ekleme
