@@ -11,7 +11,8 @@ module.exports = () => {
 
     const Tags = sequelize.define('tags', {
         guild_id: { type: Sequelize.STRING, unique: true, allowNull: false },
-        welcome_message: { type: Sequelize.JSON, defaultValue: {enabled: false, channel_id: "", message: ""} }
+        welcome_message: { type: Sequelize.JSON, defaultValue: {enabled: false, channel_id: "", message: ""} },
+        leave_message: { type: Sequelize.JSON, defaultValue: {enabled: false, channel_id: "", message: ""} }
     })
 
     return Tags
