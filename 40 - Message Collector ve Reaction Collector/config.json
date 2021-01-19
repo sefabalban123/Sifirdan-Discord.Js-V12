@@ -1,0 +1,6 @@
+{
+    "prefix":"!",
+    "token": "YOUR-TOKEN",
+    "developer_id": "YOUR-DISCORD-ID",
+    "owner_guild_id": "YOUR-GUILD-ID"
+}
